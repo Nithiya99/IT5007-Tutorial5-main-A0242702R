@@ -10,6 +10,7 @@ const app = express();
 app.use(cors());
 
 // mongodb://127.0.0.1:27017
+// Use this cloud DB if local DB does not work or not installed
 mongoose.connect(
   "mongodb+srv://Nithiya:March1999@nodeapi.gcycb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 );
