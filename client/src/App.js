@@ -23,11 +23,11 @@ function App() {
             <Card>
               <Card.Header>
                 <Nav variant="pills">
-                  <Nav.Item>
+                  {/* <Nav.Item>
                     <Nav.Link eventKey="first">Home</Nav.Link>
-                  </Nav.Item>
+                  </Nav.Item> */}
                   <Nav.Item>
-                    <Nav.Link eventKey="second">Waitlist</Nav.Link>
+                    <Nav.Link eventKey="first">Waitlist</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link
@@ -36,7 +36,7 @@ function App() {
                       //     alert("No more reservations can be made.");
                       //   }
                       // }}
-                      eventKey="third"
+                      eventKey="second"
                     >
                       Add Reservation
                     </Nav.Link>
@@ -45,11 +45,11 @@ function App() {
               </Card.Header>
               <Card.Body>
                 <Tab.Content>
-                  <Tab.Pane eventKey="first">lalaa</Tab.Pane>
-                  <Tab.Pane eventKey="second">
+                  {/* <Tab.Pane eventKey="first">lalaa</Tab.Pane> */}
+                  <Tab.Pane eventKey="first">
                     <WaitList />
                   </Tab.Pane>
-                  <Tab.Pane eventKey="third">
+                  <Tab.Pane eventKey="second">
                     <AddCustomer />
                   </Tab.Pane>
                 </Tab.Content>
