@@ -63,7 +63,7 @@ const Mutation = new GraphQLObjectType({
     removeCustomer: {
       type: CustomerType,
       args: {
-        id: { type: GraphQLID },
+        id: { type: GraphQLString },
       },
       resolve(parent, args) {
         return Customer.findByIdAndDelete(args.id);

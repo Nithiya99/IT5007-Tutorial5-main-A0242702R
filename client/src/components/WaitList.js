@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "react-apollo";
 
 import { getWaitListQuery } from "../queries/queries";
+import RemoveCustomer from "./RemoveCustomer";
 
 class WaitList extends Component {
   displayCustomers() {
@@ -14,9 +15,7 @@ class WaitList extends Component {
           <>
             <li key={customer.timestamp}>{customer.name}</li>
             <span>
-              <button key={customer._id} id={customer._id}>
-                x
-              </button>
+              <RemoveCustomer key={customer.id} id={customer.id} />
             </span>
           </>
         );
