@@ -17,13 +17,14 @@ class RemoveCustomer extends Component {
     return (
       <div>
         <button
+          className="btn btn-warning"
           key={this.props.id}
           id={this.props.id}
           onClick={(e) => {
             this.removeCust(this.props.id);
           }}
         >
-          x{" "}
+          yes{" "}
         </button>
       </div>
     );

@@ -13,10 +13,14 @@ class WaitList extends Component {
       return data.customers.map((customer) => {
         return (
           <>
-            <li key={customer.timestamp}>{customer.name}</li>
-            <span>
-              <RemoveCustomer key={customer.id} id={customer.id} />
-            </span>
+            <tr key={customer.id}>
+              <td>{customer.name}</td>
+              <td>{customer.hp}</td>
+              <td>{new Date(customer.timestamp).toTimeString()}</td>
+              <td>
+                <RemoveCustomer key={customer.id} id={customer.id} />
+              </td>
+            </tr>
           </>
         );
       });
@@ -26,7 +30,17 @@ class WaitList extends Component {
     console.log(this.props);
     return (
       <div>
-        <ul id="wait-list">{this.displayCustomers()}</ul>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Mobile Number</th>
+              <th>Time Stamp</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody id="wait-list">{this.displayCustomers()}</tbody>
+        </table>
       </div>
     );
   }
