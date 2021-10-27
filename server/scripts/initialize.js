@@ -4,22 +4,22 @@ db.customers.remove({});
 const issuesDB = [
   {
     _id: 1,
-    name: "kylie",
+    name: "Kylie",
     hp: "99665544",
     timestamp: new Date("October 30, 2021 23:15:30").toString(),
   },
 
   {
     _id: 2,
-    name: "mary",
-    hp: "88888888",
+    name: "Nithiya",
+    hp: "87171086",
     timestamp: new Date("October 30, 2021 23:15:30").toString(),
   },
 
   {
     _id: 3,
-    name: "jane",
-    hp: "88888888",
+    name: "Gary",
+    hp: "985421365",
     timestamp: new Date("October 30, 2021 23:15:30").toString(),
   },
 ];
