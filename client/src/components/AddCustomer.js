@@ -13,11 +13,15 @@ class AddCustomer extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    // console.log(this.state);
+    console.log(this.props);
     // addCustomerMutation();
     if (this.state.name === "" || this.state.hp === "") {
       return alert("Please fill in all fields");
-    } else {
+    }
+    // else if (this.props.data.customers.length() > 7) {
+    //   return alert("N more reservations can be added");
+    // }
+    else {
       this.props.addCustomerMutation({
         variables: {
           name: this.state.name,
@@ -26,6 +30,10 @@ class AddCustomer extends React.Component {
         },
         refetchQueries: [{ query: getWaitListQuery }],
       });
+      this.setState({
+        name: "",
+        hp: "",
+      });
       return alert("Reservation successfully added");
     }
   }
@@ -33,27 +41,29 @@ class AddCustomer extends React.Component {
     return (
       <form id="add-customer" onSubmit={this.submitForm.bind(this)}>
         <div className="form-group row">
-          <label for="name" class="col-sm-2 col-form-label">
+          <label htmlFor="name" className="col-sm-2 col-form-label">
             Customer Name
           </label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="name"
+              value={this.state.name}
               onChange={(e) => this.setState({ name: e.target.value })}
             />
           </div>
         </div>
         <div className="form-group row">
-          <label for="hp" class="col-sm-2 col-form-label">
+          <label htmlFor="hp" className="col-sm-2 col-form-label">
             Handphone Number
           </label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               id="hp"
+              value={this.state.hp}
               onChange={(e) => this.setState({ hp: e.target.value })}
             />
           </div>

@@ -27,7 +27,7 @@ class WaitList extends Component {
     }
   }
   render() {
-    console.log(this.props);
+    console.log(this.props.data.customers);
     return (
       <div>
         <table className="table table-hover">

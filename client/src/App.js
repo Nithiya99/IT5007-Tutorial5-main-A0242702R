@@ -19,14 +19,6 @@ function App() {
           </span>
         </nav>
         <div className="container pt-5">
-          {/* <div className="row">
-            <div className="col-md-9">
-              <WaitList />
-            </div>
-            <div className="col-md-3">
-              <AddCustomer />
-            </div>
-          </div> */}
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Card>
               <Card.Header>
@@ -38,7 +30,16 @@ function App() {
                     <Nav.Link eventKey="second">Waitlist</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="third">Add Reservation</Nav.Link>
+                    <Nav.Link
+                      // onClick={(e) => {
+                      //   if (this.props.data.customers > 7) {
+                      //     alert("No more reservations can be made.");
+                      //   }
+                      // }}
+                      eventKey="third"
+                    >
+                      Add Reservation
+                    </Nav.Link>
                   </Nav.Item>
                 </Nav>
               </Card.Header>
