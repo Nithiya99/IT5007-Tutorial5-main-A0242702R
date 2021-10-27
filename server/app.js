@@ -11,7 +11,10 @@ app.use(cors());
 
 // mongodb://127.0.0.1:27017
 // Use this cloud DB if local DB does not work or not installed
-mongoose.connect("mongodb://127.0.0.1:27017");
+// mongodb+srv://Nithiya:March1999@nodeapi.gcycb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongoose.connect(
+  "mongodb+srv://Nithiya:March1999@nodeapi.gcycb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+);
 mongoose.connection.once("open", () => {
   console.log("Connected to DB");
 });

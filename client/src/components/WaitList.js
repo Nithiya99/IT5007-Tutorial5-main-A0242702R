@@ -16,7 +16,7 @@ class WaitList extends Component {
             <tr key={customer.id}>
               <td>{customer.name}</td>
               <td>{customer.hp}</td>
-              <td>{new Date(customer.timestamp).toTimeString()}</td>
+              <td>{new Date(customer.timestamp).toString()}</td>
               <td>
                 <RemoveCustomer key={customer.id} id={customer.id} />
               </td>

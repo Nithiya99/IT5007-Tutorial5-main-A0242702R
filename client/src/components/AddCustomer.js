@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "react-apollo";
+import { compose, graphql } from "react-apollo";
 import { addCustomerMutation, getWaitListQuery } from "../queries/queries";
 
 class AddCustomer extends React.Component {
@@ -13,15 +13,14 @@ class AddCustomer extends React.Component {
   }
   submitForm(e) {
     e.preventDefault();
-    console.log(this.props);
+    console.log(this.props.getWaitListQuery.customers.length);
     // addCustomerMutation();
     if (this.state.name === "" || this.state.hp === "") {
       return alert("Please fill in all fields");
-    }
-    // else if (this.props.data.customers.length() > 7) {
-    //   return alert("N more reservations can be added");
-    // }
-    else {
+    } else {
+      if (this.props.getWaitListQuery.customers.length > 25) {
+        return alert("No more reservations can be added");
+      }
       this.props.addCustomerMutation({
         variables: {
           name: this.state.name,
@@ -74,6 +73,7 @@ class AddCustomer extends React.Component {
   }
 }
 
-export default graphql(addCustomerMutation, { name: "addCustomerMutation" })(
-  AddCustomer
-);
+export default compose(
+  graphql(addCustomerMutation, { name: "addCustomerMutation" }),
+  graphql(getWaitListQuery, { name: "getWaitListQuery" })
+)(AddCustomer);
