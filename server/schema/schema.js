@@ -29,7 +29,7 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         // code to get data from db / other source
-        return Customer.findById(parent.customerId);
+        return Customer.findById(args.id);
       },
     },
     customers: {
@@ -58,6 +58,15 @@ const Mutation = new GraphQLObjectType({
           timestamp: args.timestamp,
         });
         return customer.save();
+      },
+    },
+    removeCustomer: {
+      type: CustomerType,
+      args: {
+        id: { type: GraphQLID },
+      },
+      resolve(parent, args) {
+        return Customer.findByIdAndDelete(args.id);
       },
     },
   },

@@ -10,7 +10,16 @@ class WaitList extends Component {
       return <div>Loading Wait List</div>;
     } else {
       return data.customers.map((customer) => {
-        return <li key={customer.timestamp}>{customer.name}</li>;
+        return (
+          <>
+            <li key={customer.timestamp}>{customer.name}</li>
+            <span>
+              <button key={customer._id} id={customer._id}>
+                x
+              </button>
+            </span>
+          </>
+        );
       });
     }
   }
